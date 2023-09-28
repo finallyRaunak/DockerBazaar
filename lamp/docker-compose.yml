@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  web:
+    container_name: php-apache
+    build: .
+    ports:
+      - "8000:80"
+    volumes:
+      - ./web_data:/var/www/html
+
+  db:
+    container_name: db
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - ./db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+
+  phpmyadmin:
+    container_name: db-viewer
+    image: phpmyadmin/phpmyadmin
+    ports:
+        - '8080:80'
+    restart: always
+    environment:
+        PMA_HOST: db
+    depends_on:
+        - db
+
+
+volumes:
+  web_data:
+  db_data:

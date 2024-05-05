@@ -1,0 +1,7 @@
+
+
+keytool -genkey -alias kafka -keyalg RSA -keystore kafka.keystore.jks -keysize 2048 -validity 365 -dname "CN=kafka" -storepass changeit -keypass changeit
+
+
+keytool -export -alias kafka -keystore kafka.keystore.jks -rfc -file kafka.cer -storepass changeit
+keytool -import -alias kafka -file kafka.cer -keystore kafka.truststore.jks -storepass changeit -noprompt

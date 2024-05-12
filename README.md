@@ -19,6 +19,7 @@ To use any of the Docker Compose files in this repository, simply navigate to th
 Here are the Docker Compose files currently available in this repository:
 
 - [LAMP Stack](./lamp)
+- [Apache Kafka](./kafka)
 <!-- - [Node.js Stack]
 - [Jenkins Stack] -->
 - _More coming soon..._

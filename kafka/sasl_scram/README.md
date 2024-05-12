@@ -4,7 +4,7 @@ This folder contains a Docker Compose setup for running Apache Kafka with SASL/S
 
 ## Getting Started
 
-To get started with this Kafka setup, clone the repository and navigate to the directory containing the `kafka/docker-compose.yml` file.
+To get started with this Kafka setup, clone the repository and navigate to the directory containing the `kafka/sasl_scram/docker-compose.yml` file.
 
 Ensure you have Docker and Docker Compose installed on your system, then run the following command to start the services:
 

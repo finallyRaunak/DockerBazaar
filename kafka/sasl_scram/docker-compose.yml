@@ -18,12 +18,13 @@ services:
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: SASL_SSL:SASL_SSL,INTERNAL:PLAINTEXT
       KAFKA_ADVERTISED_LISTENERS: SASL_SSL://kafka:9093,INTERNAL://kafka:9092
       KAFKA_LISTENERS: SASL_SSL://0.0.0.0:9093,INTERNAL://0.0.0.0:9092
+      KAFKA_INTER_BROKER_LISTENER_NAME: SASL_SSL
       KAFKA_SASL_MECHANISM_INTER_BROKER_PROTOCOL: SCRAM-SHA-512
       KAFKA_SASL_ENABLED_MECHANISMS: SCRAM-SHA-512
       KAFKA_SSL_KEYSTORE_LOCATION: /var/private/ssl/kafka.server.keystore.jks
-      KAFKA_SSL_KEYSTORE_PASSWORD: changeit
+      KAFKA_SSL_KEYSTORE_PASSWORD: strongpass
       KAFKA_SSL_TRUSTSTORE_LOCATION: /var/private/ssl/kafka.server.truststore.jks
-      KAFKA_SSL_TRUSTSTORE_PASSWORD: changeit
+      KAFKA_SSL_TRUSTSTORE_PASSWORD: strongpass
       KAFKA_SSL_CLIENT_AUTH: required
       KAFKA_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM: HTTPS
       KAFKA_OPTS: "-Djava.security.auth.login.config=/etc/kafka/kafka_server_jaas.conf"
@@ -44,8 +45,6 @@ services:
       KAFKA_CLUSTERS_0_PROPERTIES_SASL_MECHANISM: SCRAM-SHA-512
       KAFKA_CLUSTERS_0_PROPERTIES_SASL_JAAS_CONFIG: org.apache.kafka.common.security.scram.ScramLoginModule required username="user" password="password";
       KAFKA_CLUSTERS_0_PROPERTIES_SSL_TRUSTSTORE_LOCATION: /var/private/ssl/kafka.server.truststore.jks
-      KAFKA_CLUSTERS_0_PROPERTIES_SSL_TRUSTSTORE_PASSWORD: changeit
+      KAFKA_CLUSTERS_0_PROPERTIES_SSL_TRUSTSTORE_PASSWORD: strongpass
     volumes:
       - ./data/jks:/var/private/ssl
-
-

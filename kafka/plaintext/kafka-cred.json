@@ -1,0 +1,7 @@
+{
+    "clientId": "simple-kafka-ui",
+    "brokers": [
+      "kafka:9092"
+    ],
+    "connectionTimeout": 5000
+}

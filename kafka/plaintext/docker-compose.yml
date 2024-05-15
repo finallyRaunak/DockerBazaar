@@ -24,6 +24,7 @@ services:
       KAFKA_DELETE_TOPIC_ENABLE: "true"
       # KAFKA_CREATE_TOPICS: "topic1:1:1,topic2:1:1"
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_REPLICATION_FACTOR: 1
     volumes:
       - ./data:/var/lib/kafka/data
 
